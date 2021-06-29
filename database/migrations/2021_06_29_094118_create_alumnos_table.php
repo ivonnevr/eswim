@@ -20,6 +20,7 @@ class CreateAlumnosTable extends Migration
             $table->string('direccion');
             $table->string('telefono', 10);
             $table->date('fechanac');
+            $table->date('inscripcion');
             $table->timestamps();
         });
     }
