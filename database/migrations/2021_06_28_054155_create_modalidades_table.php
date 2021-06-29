@@ -17,6 +17,7 @@ class CreateModalidadesTable extends Migration
             $table->id();
             $table->string('dias');
             $table->string('turno');
+            $table->string('horario');
             $table->integer('precio');
         });
     }
