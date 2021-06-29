@@ -14,7 +14,7 @@ class AlumnoController extends Controller
      */
     public function index()
     {
-        //
+        return view('alumno/alumnoIndex');
     }
 
     /**
@@ -24,7 +24,7 @@ class AlumnoController extends Controller
      */
     public function create()
     {
-        //
+        return view('alumno/alumnoForm');
     }
 
     /**
@@ -46,7 +46,7 @@ class AlumnoController extends Controller
      */
     public function show(Alumno $alumno)
     {
-        //
+        return view('alumno/alumnoShow');
     }
 
     /**
@@ -57,7 +57,7 @@ class AlumnoController extends Controller
      */
     public function edit(Alumno $alumno)
     {
-        //
+        return view('alumno/alumnoForm');
     }
 
     /**
