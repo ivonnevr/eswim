@@ -18,7 +18,7 @@ class CreateAlumnosTable extends Migration
             $table->string('nombre');
             $table->string('apellidos');
             $table->string('direccion');
-            $table->string('telefono', 10);
+            $table->string('telefono', 30);
             $table->date('fechanac');
             $table->date('inscripcion');
             $table->timestamps();
