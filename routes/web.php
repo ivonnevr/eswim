@@ -22,4 +22,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::resources('alumno', AlumnoController::class);
+Route::resource('alumno', AlumnoController::class);
