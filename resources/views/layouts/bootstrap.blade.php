@@ -43,9 +43,10 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                <a class="nav-link" href="/inicio">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <img src="{{ asset('img/hogar.png') }}" width="20px">
+                    <span>Inicio</span></a>
             </li>
 
             <!-- Divider -->
@@ -53,27 +54,28 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                Secciones
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
+                    <!-- <i class="fas fa-fw fa-cog"></i> -->
+                    <img src="{{ asset('img/swimmer.png') }}" width="20px">
+                    <span>Alumnos</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
+                        <h6 class="collapse-header">Sobre los alumnos:</h6>
+                        <a class="collapse-item" href="{{ route('alumno.index') }}">Ver alumnos inscritos</a>
+                        <a class="collapse-item" href="{{ route('alumno.create') }}">Inscribir alumno</a>
                     </div>
                 </div>
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
@@ -89,25 +91,25 @@
                         <a class="collapse-item" href="utilities-other.html">Other</a>
                     </div>
                 </div>
-            </li>
+            </li> -->
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+            <!-- <hr class="sidebar-divider"> -->
 
             <!-- Heading -->
-            <div class="sidebar-heading">
+            <!-- <div class="sidebar-heading">
                 Addons
-            </div>
+            </div> -->
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
                     aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Pages</span>
-                </a>
+                </a> -->
                 <!-- <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" -->
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages"
+                <!-- <div id="collapsePages" class="collapse" aria-labelledby="headingPages"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Login Screens:</h6>
@@ -120,24 +122,40 @@
                         <a class="collapse-item active" href="blank.html">Blank Page</a>
                     </div>
                 </div>
+            </li> -->
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('profesor.index') }}">
+                    <!-- <i class="fas fa-fw fa-chart-area"></i> -->
+                    <img src="{{ asset('img/teacher.png') }}" width="20px">
+                    <span>Profesores</span></a>
             </li>
 
-            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('modalidad.index') }}">
+                    <!-- <i class="fas fa-fw fa-chart-area"></i> -->
+                    <img src="{{ asset('img/calendar.png') }}" width="20px">
+                    <span>Modalidades</span></a>
+            </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
+                    <!-- <i class="fas fa-fw fa-chart-area"></i> -->
+                    <img src="{{ asset('img/group.png') }}" width="20px">
+                    <span>Grupos</span></a>
             </li>
 
-            <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                <a class="nav-link" href="charts.html">
+                    <!-- <i class="fas fa-fw fa-chart-area"></i> -->
+                    <img src="{{ asset('img/edit.png') }}" width="20px">
+                    <span>Registro de asistencias</span></a>
             </li>
+
+            
 
             <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+            <!-- <hr class="sidebar-divider d-none d-md-block"> -->
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -165,7 +183,7 @@
                     <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar..."
                                 aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">

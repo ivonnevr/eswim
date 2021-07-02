@@ -18,8 +18,8 @@ class CreateProfesorsTable extends Migration
             $table->string('nombre');
             $table->string('direccion');
             $table->string('telefono', 30);
-            $table->string('fechanac');
-            $table->string('inicio');
+            $table->date('fechanac');
+            $table->date('inicio');
             $table->unsignedBigInteger('modalidad_id');
 
             $table->foreign('modalidad_id')->references('id')->on('modalidades');
