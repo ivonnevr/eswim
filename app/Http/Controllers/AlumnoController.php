@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Alumno;
 use Illuminate\Http\Request;
 
+
 class AlumnoController extends Controller
 {
     /**
@@ -36,6 +37,14 @@ class AlumnoController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nombre' => ['required', 'string', 'min:3', 'max:255'],
+            'apellidos' => ['required', 'string', 'min:5', 'max:255'],
+            'direccion' => 'required|string|min:5|max:255',
+            'telefono' => 'required|string|min:8|max:30',
+            'fechanac' => 'required',
+            'inscripcion' => 'required',
+        ]);
         Alumno::create($request->all());
         return redirect()->route('alumno.index');
     }
@@ -71,6 +80,14 @@ class AlumnoController extends Controller
      */
     public function update(Request $request, Alumno $alumno)
     {
+        $request->validate([
+            'nombre' => ['required', 'string', 'min:3', 'max:255'],
+            'apellidos' => ['required', 'string', 'min:5', 'max:255'],
+            'direccion' => 'required|string|min:5|max:255',
+            'telefono' => 'required|string|min:8|max:30',
+            'fechanac' => 'required',
+            'inscripcion' => 'required',
+        ]);
         Alumno::where('id', $alumno->id)->update($request->except('_token', '_method'));
         return redirect()->route('alumno.show', $alumno);
     }

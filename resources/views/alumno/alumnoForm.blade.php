@@ -28,48 +28,66 @@
             <span class="text-gray-700 dark:text-gray-400">Nombre(s):</span>
             <input
                 class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                type="text" name="nombre" value="{{ $alumno->nombre ?? '' }}"
+                type="text" name="nombre" value="{{ old('nombre') ?? $alumno->nombre ?? '' }}"
             />
+            @error('nombre')
+                <span class="text-xs text-red-600 dark:text-red-400">{{ $message }}</span>
+            @enderror
         </label>
 
         <label class="block text-sm">
             <span class="text-gray-700 dark:text-gray-400">Apellidos:</span>
             <input
                 class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                type="text" name="apellidos" value="{{ $alumno->apellidos ?? '' }}"
+                type="text" name="apellidos" value="{{ old('apellidos') ?? $alumno->apellidos ?? '' }}"
             />
+            @error('apellidos')
+                <span class="text-xs text-red-600 dark:text-red-400">{{ $message }}</span>
+            @enderror
         </label>
 
         <label class="block text-sm">
             <span class="text-gray-700 dark:text-gray-400">Dirección:</span>
             <input
                 class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                type="text" name="direccion" value="{{ $alumno->direccion ?? '' }}"
+                type="text" name="direccion" value="{{ old('direccion') ?? $alumno->direccion ?? '' }}"
             />
+            @error('direccion')
+                <span class="text-xs text-red-600 dark:text-red-400">{{ $message }}</span>
+            @enderror
         </label>
 
         <label class="block text-sm">
             <span class="text-gray-700 dark:text-gray-400">Teléfono:</span>
             <input
                 class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                type="text" name="telefono" value="{{ $alumno->telefono ?? '' }}"
+                type="text" name="telefono" value="{{ old('telefono') ?? $alumno->telefono ?? '' }}"
             />
+            @error('telefono')
+                <span class="text-xs text-red-600 dark:text-red-400">{{ $message }}</span>
+            @enderror
         </label>
 
         <label class="block text-sm">
             <span class="text-gray-700 dark:text-gray-400">Fecha de nacimiento:</span>
             <input
                 class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                type="date" name="fechanac" value="{{ $alumno->fechanac ?? '' }}"
+                type="date" name="fechanac" value="{{ old('fechanac') ?? $alumno->fechanac ?? '' }}"
             />
+            @error('fechanac')
+                <span class="text-xs text-red-600 dark:text-red-400">{{ $message }}</span>
+            @enderror
         </label>
 
         <label class="block text-sm">
             <span class="text-gray-700 dark:text-gray-400">Fecha de inscripción:</span>
             <input
                 class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                type="date" name="inscripcion" value="{{ $alumno->inscripcion ?? '' }}"
+                type="date" name="inscripcion" value="{{ old('inscripcion') ?? $alumno->inscripcion ?? '' }}"
             />
+            @error('inscripcion')
+                <span class="text-xs text-red-600 dark:text-red-400">{{ $message }}</span>
+            @enderror
         </label>
 
         <button type="submit" class="btn btn-success btn-icon-split">
