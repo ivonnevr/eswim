@@ -4,7 +4,7 @@
 
 ## Descripción del objetivo del proyecto
 
-- Este proyecto tiene como objetivo hacer una aplicación web para una escuela de natación. En ella se llevará el registro de los alumnos (nombre, apellidos, dirección, teléfono de emergencia, fecha de nacimiento y fecha en la que se inscribieron), así como la modalidad en la que están inscritos (días, turno, horario, costo de la modalidad), además de tener un registro de los profesores que imparten clases y en qué horario y un registro de los grupos (alumnos que pertenecen al grupo y profesor que les imparte clases).
+- Este proyecto tiene como objetivo hacer una aplicación web para una escuela de natación. En ella se hará la inscripción de los alumnos a la escuela (nombre, apellidos, dirección, teléfono de emergencia, fecha de nacimiento y fecha en la que se inscribieron), se tendrá un registro de las modalidades ofrecidas por la escuela (días, turno, horario, costo de la modalidad) y además se tendrá un registro de los profesores que imparten clases.
 
 ## Elaborado por
 

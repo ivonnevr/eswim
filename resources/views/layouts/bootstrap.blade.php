@@ -28,6 +28,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
+        @auth
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
@@ -43,7 +44,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="/inicio">
+                <a class="nav-link" href="/">
                     <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
                     <img src="{{ asset('img/hogar.png') }}" width="20px">
                     <span>Inicio</span></a>
@@ -138,19 +139,19 @@
                     <span>Modalidades</span></a>
             </li>
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="charts.html">
-                    <!-- <i class="fas fa-fw fa-chart-area"></i> -->
+                    <i class="fas fa-fw fa-chart-area"></i>
                     <img src="{{ asset('img/group.png') }}" width="20px">
                     <span>Grupos</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="charts.html">
-                    <!-- <i class="fas fa-fw fa-chart-area"></i> -->
+                    <i class="fas fa-fw fa-chart-area"></i>
                     <img src="{{ asset('img/edit.png') }}" width="20px">
                     <span>Registro de asistencias</span></a>
-            </li>
+            </li> -->
 
             
 
@@ -163,6 +164,7 @@
             </div>
 
         </ul>
+        @endauth
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -229,10 +231,11 @@
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
+                        @auth
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <!-- <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span> -->
                                 <img class="img-profile rounded-circle"
                                     src="{{ asset('img/undraw_profile.svg') }}">
                             </a>
@@ -258,6 +261,34 @@
                                 </a>
                             </div>
                         </li>
+                        @endauth
+
+                        @guest
+                        <table>
+                            <tr>
+                                <td>
+                                    <li class="nav-item dropdown no-arrow">
+                                        <a href="{{ route('login') }}" class="btn btn-secondary btn-icon-split">
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-arrow-right"></i>
+                                            </span>
+                                            <span class="text">Iniciar sesión</span>
+                                        </a>
+                                    </li>
+                                </td>
+                                <td>
+                                    <li class="nav-item dropdown no-arrow">
+                                        <a href="{{ route('register') }}" class="btn btn-secondary btn-icon-split">
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-arrow-right"></i>
+                                            </span>
+                                            <span class="text">Registrarse</span>
+                                        </a>
+                                    </li>
+                                </td>
+                            </tr>
+                        </table>
+                        @endguest
 
                     </ul>
 

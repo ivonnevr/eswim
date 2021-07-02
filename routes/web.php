@@ -16,12 +16,12 @@ use App\Http\Controllers\ModalidadController;
 |
 */
 
-Route::get('inicio', function () {
-    return view('inicio');
-});
+// Route::get('inicio', function () {
+//     return view('inicio');
+// });
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('inicio');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

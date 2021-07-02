@@ -1,7 +1,4 @@
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Recuperar contraseña - ESwim</title>
+    <title>Login - ESwim</title>
 
     <!-- Custom fonts for this template-->
     <link
@@ -49,41 +46,53 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-password-image"></div>
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-2">¿Olvidó su contraseña?</h1>
-                                        <p class="mb-4">No se preocupe, esas cosas suceden. ¡Ingrese su correo electrónico
-                                            y le enviaremos un enlace para reestablecer su contraseña!</p>
+                                        <h1 class="h4 text-gray-900 mb-4">¡Bienvenido de nuevo!</h1>
                                     </div>
-
-                                    <form method="POST" action="{{ route('password.email') }}">
+                                    <form method="POST" action="{{ route('login') }}">
                                     @csrf
-
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
-                                                id="email" aria-describedby="emailHelp"
-                                                name="email" :value="old('email')" required autofocus
+                                                id="email" name="email" :value="old('email')" required autofocus
+                                                aria-describedby="emailHelp"
                                                 placeholder="Correo electrónico...">
-                                            @error('email')
-                                                <span class="text-xs text-red-600 dark:text-red-400">{{ $message }}</span>
-                                            @enderror
+                                                @error('email')
+                                                    <span class="text-xs text-red-600 dark:text-red-400">{{ $message }}</span>
+                                                @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user"
+                                                id="password" name="password" required autocomplete="current-password"
+                                                placeholder="Contraseña">
+                                                @error('password')
+                                                    <span class="text-xs text-red-600 dark:text-red-400">{{ $message }}</span>
+                                                @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox small">
+                                                <input type="checkbox" name="remember" class="custom-control-input" id="customCheck">
+                                                <label class="custom-control-label" for="customCheck">{{ __('Remember me') }}</label>
+                                            </div>
                                         </div>
                                         <button class="btn btn-primary btn-user btn-block">
-                                            {{ __('Reestablecer contraseña') }}
+                                            {{ __('Log in') }}
                                         </button>
+                                        <hr>
                                     </form>
-
                                     <hr>
+                                    <div class="text-center">
+                                    @if (Route::has('password.request'))
+                                        <a class="small" href="{{ route('password.request') }}">
+                                            {{ __('¿Olvidó su contraseña?') }}
+                                        </a>
+                                    @endif
+                                    </div>
                                     <div class="text-center">
                                         <a href="{{ route('register') }}" class="small">
                                             Crear cuenta
-                                        </a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                                            {{ __('¿Ya está registrado? Inicie sesión') }}
                                         </a>
                                     </div>
                                 </div>
